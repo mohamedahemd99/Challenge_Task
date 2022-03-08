@@ -1,7 +1,7 @@
 import '../../model/model.dart';
 import 'const.dart';
-
-void getOrdersPerMonth() {
+//by List
+void getOrdersPerMonth1() {
   orders = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   String? month;
   for (int i = 0; i < json.length; i++) {
@@ -33,6 +33,53 @@ void getOrdersPerMonth() {
     }
   }
 }
+
+//by Map
+
+void getOrdersPerMonth()
+{
+  for (int i = 0; i < json.length; i++) {
+    month = json[i]["registered"].split("-")[1];
+    if(month=="01") {
+      orders1.update("jan", (value) => value=value+1);
+    }
+    if(month=="02") {
+      orders1.update("feb", (value) => value=value+1);
+    }
+    if(month=="03") {
+      orders1.update("march", (value) => value=value+1);
+    }
+    if(month=="04") {
+      orders1.update("apr", (value) => value=value+1);
+    }
+    if(month=="05") {
+      orders1.update("may", (value) => value=value+1);
+    }
+    if(month=="06") {
+      orders1.update("jun", (value) => value=value+1);
+    }
+    if(month=="07") {
+      orders1.update("jul", (value) => value=value+1);
+    }
+    if(month=="08") {
+      orders1.update("aug", (value) => value=value+1);
+    }
+    if(month=="09") {
+      orders1.update("sep", (value) => value=value+1);
+    }
+    if(month=="10") {
+      orders1.update("oct", (value) => value=value+1);
+    }
+    if(month=="11") {
+      orders1.update("nov", (value) => value=value+1);
+    }
+    if(month=="12") {
+      orders1.update("dec", (value) => value=value+1);
+    }
+  }
+
+}
+
 
 double spilt(String json) {
   return double.parse(
